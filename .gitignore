@@ -6,5 +6,5 @@
 .classpath
 .settings/
 
-./test-output/
-./bin/
+test-output/
+bin/
