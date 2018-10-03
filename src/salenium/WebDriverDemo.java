@@ -14,52 +14,58 @@ import org.testng.annotations.Test;
 
 public class WebDriverDemo {
 
-//	public static void main(String[] args) {
-//
+	public static void main(String[] args) {
+
 //		System.setProperty("webdriver.gecko.driver", "/Users/ravi/Downloads/automation/geckodriver");
 //		System.setProperty("webdriver.chrome.driver", "/Users/ravi/Downloads/automation/chromedriver");
 //
 //		WebDriver driver = new ChromeDriver();
 //		driver.get("https://www.google.com");
-//		
-//		driver.manage().window().maximize();
+//
+////		driver.manage().window().maximize();
 //		
 //		WebElement element = driver.findElement(By.id("lst-ib"));
-//		element.sendKeys("Anjali's Facebook profile");
+//		element.sendKeys("2+3");
 //		element.submit();
-////		driver.quit();
-//	}
+//
+//		WebElement result = driver.findElement(By.id("cwos"));
+//
+//		System.out.println("value = "+result.getText());
+//
+//		Assert.assertEquals(result.getText(), "5");
+//		driver.quit();
+	}
 
 	WebDriver driver;
 
-	@BeforeClass
-	void classSetup() {
+//	@BeforeClass
+//	void classSetup() {
 //		System.setProperty("webdriver.gecko.driver", "/Users/ravi/Downloads/automation/geckodriver");
-		System.setProperty("webdriver.chrome.driver", "/Users/ravi/Downloads/automation/chromedriver");
-	}
+//		System.setProperty("webdriver.chrome.driver", "/Users/ravi/Downloads/automation/chromedriver");
+//	}
 
-	@AfterClass
-	void destoyClass() {
-//		System.clearProperty("webdriver.gecko.driver");
-		System.clearProperty("webdriver.chrome.driver");
-	}
-
-	@BeforeMethod
-	void setup() {
-		driver = new ChromeDriver();
-		driver.get("https://www.google.com");
-//		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	void tearDown() {
-		driver.quit();
-	}
-
-	@DataProvider(name = "calc-data")
-	Object[][] provideData() {
-		return new Object[][] { { "2+3", "5" }, { "sqrt 4", "2" }, { "3-2", "1" } };
-	}
+//	@AfterClass
+//	void destoyClass() {
+////		System.clearProperty("webdriver.gecko.driver");
+//		System.clearProperty("webdriver.chrome.driver");
+//	}
+//
+//	@BeforeMethod
+//	void setup() {
+//		driver = new ChromeDriver();
+//		driver.get("https://www.google.com");
+////		driver.manage().window().maximize();
+//	}
+//
+//	@AfterMethod
+//	void tearDown() {
+//		driver.quit();
+//	}
+//
+//	@DataProvider(name = "calc-data")
+//	Object[][] provideData() {
+//		return new Object[][] { { "2+3", "5" }, { "sqrt 4", "2" }, { "3-2", "1" } };
+//	}
 
 	@Test(dataProvider = "calc-data")
 	void demoTest(String input, String output) {
