@@ -24,11 +24,6 @@ public class Exercise2 {
 		System.setProperty("webdriver.chrome.driver", "/Users/ravi/Downloads/automation/chromedriver");
 	}
 
-	@AfterClass
-	void resetClass() {
-		System.clearProperty("webdriver.chrome.driver");
-	}
-
 	@BeforeMethod
 	void setupMethod() {
 		driver = new ChromeDriver();
@@ -58,7 +53,9 @@ public class Exercise2 {
 		userIdElem.sendKeys("ravi.k@cashify.in");
 		driver.findElement(By.id("identifierNext")).click();
 
-		WebDriverWait wait = new WebDriverWait(driver, 6);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		
+		
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("password")));
 
 		WebElement passIdElem = driver.findElement(By.name("password"));
@@ -69,6 +66,12 @@ public class Exercise2 {
 		driver.findElement(By.id("passwordNext")).click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='gb_9a gbii']")));
+		
 		Assert.assertTrue(driver.findElement(By.xpath("//span[@class='gb_9a gbii']")).isDisplayed());
+	}
+	
+	@AfterClass
+	void resetClass() {
+		System.clearProperty("webdriver.chrome.driver");
 	}
 }

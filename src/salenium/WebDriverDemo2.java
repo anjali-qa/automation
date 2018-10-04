@@ -36,7 +36,6 @@ public class WebDriverDemo2 {
 		driver.quit();
 	}
 	
-	
 	@Test
 	void test1() {
 		WebElement element = driver.findElement(By.id("lst-ib"));
@@ -46,7 +45,6 @@ public class WebDriverDemo2 {
 		WebElement result = driver.findElement(By.id("cwos"));
 		Assert.assertEquals(result.getText(), "5");
 	}
-	
 	
 	@Test
 	void test2() {
