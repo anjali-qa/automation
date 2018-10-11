@@ -55,7 +55,6 @@ public class Exercise2 {
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		
-		
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("password")));
 
 		WebElement passIdElem = driver.findElement(By.name("password"));
