@@ -79,4 +79,21 @@ public class Footer {
 
 		Assert.assertTrue(isBlogFound);
 	}
+
+	@Test
+	void faq() {
+		WebElement e = driver.findElement(By.linkText("FAQ"));
+		e.click();
+
+		Set<String> tabs = driver.getWindowHandles();
+		boolean isFound = false;
+		for (String tab : tabs) {
+			WebDriver w = driver.switchTo().window(tab);
+			if (w.getCurrentUrl().equals("https://www.cashify.in/blog/faqs/buyback/")) {
+				isFound = true;
+			}
+
+		}
+		Assert.assertTrue(isFound);
+	}
 }

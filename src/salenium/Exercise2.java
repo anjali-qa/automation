@@ -58,7 +58,7 @@ public class Exercise2 {
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("password")));
 
 		WebElement passIdElem = driver.findElement(By.name("password"));
-		passIdElem.sendKeys("reglobe@123");
+		passIdElem.sendKeys("Reglobe@123");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("passwordNext")));
 
